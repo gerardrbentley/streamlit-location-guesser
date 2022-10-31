@@ -13,7 +13,7 @@ log.setLevel(logging.DEBUG)
 @st.experimental_singleton
 def get_connection() -> sqlite3.Connection:
     conn = sqlite3.connect(
-        database="file:states.db?immutable=1",
+        database="file:us_states.db?immutable=1",
         timeout=5,
         detect_types=0,
         isolation_level="DEFERRED",
@@ -24,7 +24,7 @@ def get_connection() -> sqlite3.Connection:
     )
     conn.row_factory = sqlite3.Row
     conn.enable_load_extension(True)
-    conn.load_extension("/opt/homebrew/lib/mod_spatialite.dylib")
+    conn.load_extension("mod_spatialite")
     return conn
 
 
