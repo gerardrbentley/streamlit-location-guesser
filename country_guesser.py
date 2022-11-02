@@ -43,7 +43,7 @@ RANDOM_LOCATION = "random_location"
 
 def main():
     st.set_page_config(page_title="Spatial-lit", page_icon="🌎")
-    st.title("Guess the Country!")
+    st.title("Guess the Country! 🌍")
 
     if RANDOM_LOCATION not in st.session_state:
         random_location = get_random_location()
@@ -81,7 +81,7 @@ def main():
 
     clean_guess = guess.lower().strip()
     st.header(random_location["name_en"])
-    st.subheader(random_location["iso_a2"])
+    st.subheader(random_location["fips_10_"])
 
     did_win = False
     for column in NAME_COLUMNS:
