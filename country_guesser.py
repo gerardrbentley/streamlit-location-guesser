@@ -59,7 +59,7 @@ def main():
     lon, lat = random_point["coordinates"]
     m = folium.Map(
         location=[0, 0],
-        zoom_start=2,
+        zoom_start=1,
         tiles="Stamen Watercolor",
         attr="Stamen",
     )
