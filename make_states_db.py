@@ -23,7 +23,7 @@ conn.enable_load_extension(True)
 conn.execute("SELECT load_extension('mod_spatialite')")
 conn.execute("select InitSpatialMetadataFull(1)")
 conn.execute(
-    "SELECT ImportZipSHP(?, ?, ?, 'utf-8');",
+    "SELECT ImportZipSHP(?, ?, ?, 'utf-8', -1, 'geometry', 'fid');",
     (f"{table_name}.zip", table_name, table_name),
 )
 conn.execute("DROP TABLE IF EXISTS spatial_ref_sys")
